@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <!-- Eugene Evstafiev 2019-03-31 -->
     <meta charset="utf-8">
@@ -13,416 +12,10 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- 1. load the webfonts -->
     <link rel="stylesheet" type="text/css" href="css/MyFontsWebfontsKit.css" />
-
+    <!-- Swiper Slider CSS -->
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
-    <!-- 2. set up some css styles using the webfonts -->
-    <style type="text/css">
-        * {
-            font-family: MuseoSans-500;
-        }
-    </style>
-    <style>
-    header {
-            height: 48px;
-        }
-        
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-        
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-        
-        .main-img {
-            width: 100%;
-            padding: 7.5px;
-            background: #ffffff;
-            border: 1px solid #d6d5d5;
-        }
-        
-        .button-subscribe {
-            border: 1px solid #7832b8;
-            -webkit-border-radius: 32px;
-            -moz-border-radius: 22px;
-            border-radius: 22px;
-            font-size: 24px;
-            font-family: arial, helvetica, sans-serif;
-            padding: 10px 10px 10px 10px;
-            text-decoration: none;
-            display: inline-block;
-            text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
-            font-weight: bold;
-            background-color: #7832b8;
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#7832b8), to(#9174ed));
-            background-image: -webkit-linear-gradient(top, #7832b8, #511a82);
-            background-image: -moz-linear-gradient(top, #7832b8, #511a82);
-            background-image: -ms-linear-gradient(top, #7832b8, #511a82);
-            background-image: -o-linear-gradient(top, #7832b8, #511a82);
-            background-image: linear-gradient(to bottom, #7832b8, #511a82);
-            filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#7832b8, endColorstr=#9174ed);
-            font-weight: bold;
-            width: 175px;
-            color: white !important;
-        }
-        
-        .button-subscribe:hover {
-            border: 0px solid #693bf1;
-            background-color: #8135c4;
-            background-image: -webkit-gradient(linear, left top, left bottom, from(#8e6af5), to(#6d47e7));
-            background-image: -webkit-linear-gradient(top, #511a82, #6d47e7);
-            background-image: -moz-linear-gradient(top, #511a82, #6d47e7);
-            background-image: -ms-linear-gradient(top, #511a82, #6d47e7);
-            background-image: -o-linear-gradient(top, #511a82, #6d47e7);
-            background-image: linear-gradient(to bottom, #511a82, #6d47e7);
-            filter: progid: DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#511a82, endColorstr=#6d47e7);
-            color: white;
-            text-decoration: none;
-        }
-        
-        .swiper-button-next {
-            width: 28px;
-            height: 38px;
-            background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20129%20129%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20enable-background%3D%22new%200%200%20129%20129%22%3E%0A%20%20%3Cg%3E%0A%20%20%20%20%3Cpath%20d%3D%22m40.4%2C121.3c-0.8%2C0.8-1.8%2C1.2-2.9%2C1.2s-2.1-0.4-2.9-1.2c-1.6-1.6-1.6-4.2%200-5.8l51-51-51-51c-1.6-1.6-1.6-4.2%200-5.8%201.6-1.6%204.2-1.6%205.8%2C0l53.9%2C53.9c1.6%2C1.6%201.6%2C4.2%200%2C5.8l-53.9%2C53.9z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
-            background-repeat: no-repeat;
-            margin-top: -18px;
-            right: auto;
-        }
-        
-        .swiper-button-prev {
-            width: 28px;
-            height: 38px;
-            background-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20id%3D%22Capa_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%0A%09%20viewBox%3D%220%200%20477.175%20477.175%22%20style%3D%22enable-background%3Anew%200%200%20477.175%20477.175%3B%22%20xml%3Aspace%3D%22preserve%22%3E%0A%3Cg%3E%0A%09%3Cpath%20d%3D%22M145.188%2C238.575l215.5-215.5c5.3-5.3%2C5.3-13.8%2C0-19.1s-13.8-5.3-19.1%2C0l-225.1%2C225.1c-5.3%2C5.3-5.3%2C13.8%2C0%2C19.1l225.1%2C225%0A%09%09c2.6%2C2.6%2C6.1%2C4%2C9.5%2C4s6.9-1.3%2C9.5-4c5.3-5.3%2C5.3-13.8%2C0-19.1L145.188%2C238.575z%22%2F%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E");
-            background-repeat: no-repeat;
-            margin-top: -18px;
-            left: auto;
-        }
-        
-        .main-img-slider {
-            /*400 800*/
-            height: auto;
-            width: auto;
-        }
-        
-        a {
-            color: #8a66f4;
-        }
-        
-        #myCarousel {
-            margin-top: 16px;
-            margin-bottom: 16px;
-            height: auto;
-        }
-        
-        .main-img-slider {
-            padding: 15px;
-            height: 100%;
-        }
-        
-        .swiper-container {
-            width: 100%;
-            height: 100%;
-            top: 32px;
-        }
-        
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            background-color: #feea00;
-            /* Center slide text vertically */
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            -webkit-justify-content: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-        }
-        
-        .swiper-slide img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 100%;
-            -ms-transform: translate(-50%, -50%);
-            -webkit-transform: translate(-50%, -50%);
-            -moz-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-            position: absolute;
-            left: 50%;
-            top: 50%;
-        }
-        
-        .parent-slide-btn-next {
-            background-color: white;
-            right: 15px;
-            left: auto;
-            position: absolute;
-            top: 50%;
-            width: 28px;
-            z-index: 999;
-            height: 38px;
-        }
-        
-        .parent-slide-btn-prev {
-            background-color: white;
-            right: auto;
-            left: 15px;
-            position: absolute;
-            top: 50%;
-            width: 28px;
-            z-index: 999;
-            height: 38px;
-        }
-        
-        .i1 {
-            background: url("https://loremflickr.com/400/800/girl/?lock=1") no-repeat;
-            background-position: center;
-        }
-        
-        .i2 {
-            background: url("https://loremflickr.com/400/800/girl/?lock=2") no-repeat;
-            background-position: center
-        }
-        
-        .i3 {
-            background: url("https://loremflickr.com/400/800/girl/?lock=3") no-repeat;
-            background-position: center;
-        }
-        
-        .i4 {
-            background: url("https://loremflickr.com/400/800/girl/?lock=4") no-repeat;
-            background-position: center;
-        }
-        
-        .i5 {
-            background: url("https://loremflickr.com/400/800/girl/?lock=5") no-repeat;
-            background-position: center;
-        }
-        
-        .logo {
-            background: url("i/1.jpg") no-repeat;
-            background-position: center;
-            background-size: contain;
-            width: 40px;
-            height: 40px;
-        }
-        
-        a.navbar-brand {
-            color: white;
-        }
-        
-        .custom-nav {
-            justify-content: center;
-            background-color: #8135c4 !important;
-        }
-        
-        .stats-table {
-            padding-top: 0px;
-            padding-bottom: 16px;
-        }
-        
-        .stats-table>.row:nth-child(2n+1) {
-            background-color: #f2f7f7;
-        }
-        
-        .stats-table-tr {
-            padding-top: 16px;
-            padding-bottom: 16px;
-        }
-        
-        .stats-table-label {
-            color: black;
-        }
-        
-        .h2-stats {
-            margin-bottom: 32px;
-        }
-        
-        .swiper-slide-white-border {
-            border: 7.5px solid white;
-            float: left;
-            height: 600px;
-            min-width: 400px;
-        }
-        
-        .swiper-slide-img {
-            height: 585px;
-        }
-        
-        .top-section {
-            background-color: #feea00;
-        }
-        
-        .section {
-            margin-top: 16px;
-        }
-        
-        .desktop-imgs {
-            height: 100%;
-        }
-        
-        .desktop-main-white-border {
-            height: 525px;
-        }
-        
-        .desktop-white-border {
-            height: 245px;
-        }
-        
-        .desktop-paddings {
-            padding-left: 7.5px;
-            padding-right: 7.5px;
-        }
-        
-        .desktop-small-imgs {
-            height: 230px;
-        }
-        
-        .description {
-            padding-left: 7.5px;
-            padding-right: 7.5px;
-            padding-top: 24px;
-        }
-        
-        .modal-content {
-            border-radius: .9rem;
-        }
-        
-        .modal-footer {
-            border-top: 0px;
-            justify-content: center;
-            padding-bottom: 32px;
-        }
-        
-        .desktop-imgs-container {
-            padding-top: 15px;
-            padding-bottom: 30px;
-        }
-        
-        .button-subscribe-block {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            width: 100%;
-            text-align: center;
-        }
-        
-        .container-stats {
-            font-size: 18pt;
-            margin-top: 32px;
-        }
-        
-        .modal-header {
-            border-bottom: 0px;
-        }
-        
-        .modal-title {
-            padding-top: 0px;
-        }
-        
-        .price {
-            margin-top: 16px;
-        }
-        
-        .modal-price {
-            font-size: 24pt;
-            font-weight: 600;
-            font-size: 24pt !important;
-        }
-        
-        .button-subscribe.modal-btn {
-            width: 250px;
-        }
-        
-        input.email {
-            border: 0px;
-            width: 100%;
-            border: 1px solid #c3c3c3 !important;
-            -webkit-border-radius: 32px !important;
-            -moz-border-radius: 22px !important;
-            border-radius: 22px !important;
-            height: 45px !important;
-            padding: 20px !important;
-            font-size: 18px !important;
-        }
-    }
-    .input-group {
-        margin-top: 16px !important;
-    }
-    /* The container */
-    .checkbox-box {
-        display: block;
-        position: relative;
-        padding-left: 35px;
-        margin-bottom: 12px;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-    /* Hide the browser's default checkbox */
-    .checkbox-box input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
-    /* Create a custom checkbox */
-    .checkmark {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 25px;
-        width: 25px;
-        background-color: white;
-        border: 1px solid #b9b9b9;
-    }
-    /* On mouse-over, add a grey background color */
-    .checkbox-box:hover input ~ .checkmark {
-        background-color: white;
-        border: 1px solid #b9b9b9;
-    }
-    /* When the checkbox is checked, add a blue background */
-    .checkbox-box input:checked ~ .checkmark {
-        background-color: #8135c4;
-    }
-    /* Create the checkmark/indicator (hidden when not checked) */
-    .checkmark:after {
-        content: "";
-        position: absolute;
-        display: none;
-    }
-    /* Show the checkmark when checked */
-    .checkbox-box input:checked ~ .checkmark:after {
-        display: block;
-    }
-    /* Style the checkmark/indicator */
-    .checkbox-box .checkmark:after {
-        left: 9px;
-        top: 5px;
-        width: 5px;
-        height: 10px;
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        -webkit-transform: rotate(45deg);
-        -ms-transform: rotate(45deg);
-        transform: rotate(45deg);
-    }
-    </style>
+    <!-- Index page CSS -->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
 </head>
 
 <body>
@@ -436,7 +29,6 @@
     <main role="main">
         <div class="top-section">
             <div class="section">
-
                 <div id="myCarousel" class="d-md-none carousel-fade">
                     <!-- Swiper -->
                     <div class="swiper-container">
@@ -516,7 +108,7 @@
                                         <div class="i5 desktop-small-imgs"> </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div><!--<div class="row d-none d-md-flex">-->
                             <div class="row description">
                                 <div>
                                     <h1>Alina Stasy</h1>
@@ -524,23 +116,19 @@
                                 </div>
                                 <div class="text-center button-subscribe-block">
                                     <!-- a trigger modal -->
-                                    <a class="button-subscribe" data-toggle="modal" data-target="#ModalCenter">
-                  Subscribe
-                  </a>
-
-                                    <div>
-                                    </div>
+                                    <button class="button-subscribe" data-toggle="modal" data-target="#ModalCenter">
+                                        Subscribe
+                                    </button>
                                     <div class="price">Starting from <strong>$ 999/mo</strong></div>
-                                </div>
-
-                            </div>
-                        </div>
+                                </div><!-- <div class="text-center button-subscribe-block"> -->
+                            </div><!-- <div class="row description"> -->
+                        </div><!-- <div class="col-md-8 col-lg-8 col-sm-12"> -->
                     </div>
                     <!--<div class="row">-->
                 </div>
                 <!--<div class="container">-->
-            </div>
-        </div>
+            </div><!-- <div class="section"> -->
+        </div><!-- <div class="top-section"> -->
         <div class="container container-stats">
             <div class="text-center ">
                 <h2 class="h2-stats">Stats</h2>
@@ -703,13 +291,11 @@
             </div>
         </div>
         <!--<div class="container">-->
-
         <!-- FOOTER 
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
       </footer>-->
     </main>
-
     <!-- Modal -->
     <div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -727,7 +313,6 @@
                         <input type="email" class="form-control email" aria-label="Enter a valid email address" aria-describedby="inputGroup-sizing-sm" placeholder="Enter a valid email address">
                     </div>
                     <div>
-
                         <label class="checkbox-box">
                             By checking this box, I certify that I am at leask 18- years old, have the capacity to enter into legally binding contracts, and have read and agree to the
                             <a href="#">Terms of Service</a>
@@ -740,7 +325,7 @@
                             <span class="checkmark"></span>
                         </label>
                     </div>
-                </div>
+                </div><!--<div class="modal-body">-->
                 <div class="modal-footer" align="center">
                     <div>
                         <!-- Button trigger modal -->
@@ -757,30 +342,13 @@
     </div>
     <!--<div class="modal fade"  id="exampleModalCenter">-->
 
+    <!-- Bootstrap core JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-
-    <script type="text/javascript">
-        var swiper = new Swiper('.swiper-container', {
-
-            centeredSlides: true,
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
-            },
-            keyboard: {
-                enabled: true,
-            },
-            lazy: true,
-            spaceBetween: 30,
-            grabCursor: true,
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script>
+    <!-- Bootstrap core JS -->
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper Slider JS -->
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <!-- Index page JS -->
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
-
 </html>
